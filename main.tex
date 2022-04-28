@@ -1,0 +1,143 @@
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8 Unicode
+% !Mode:: "TeX:UTF-8"
+
+%\documentclass[bachelor]{dutthesis} % 本科
+\documentclass[master]{dutthesis} % 硕士
+%\documentclass[doctor]{dutthesis} % 博士
+\usepackage{amsmath}
+\usepackage{amsfonts} 
+\usepackage{bm} 
+\usepackage{bbm} % ++++
+\usepackage{algorithm}
+% \usepackage{algorithmic}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+\usepackage{subfigure}
+\usepackage{tabularx}
+\usepackage{arydshln}
+\usepackage{array}
+\usepackage{physics}
+\usepackage{enumerate,paralist} %产生列表，有序，缩进等功能
+\usepackage{layouts} %用于绘制页面布局
+\usepackage{layout} %用于绘制页面布局
+\usepackage{listings} %插入代码用，不用可以取消
+
+\usepackage{multirow}
+
+\lstset{frame=tlrb,fontadjust=true,basicstyle=\fontsize{10}{9}\ttfamily,
+emphstyle=\color{red!80},
+emph={root,base},emphstyle={\color{blue}},
+tab=\rightarrowfill,keywordstyle={[1]\color{blue!80}},
+keywordstyle={[2]\color{red!50}},
+stringstyle=\color{magenta},
+breaklines=true,
+columns=fixed,
+commentstyle=\color{black!50}}
+ 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%  使得layout使用mm做单位，不重要  %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\renewcommand*{\lay@value}[2]{%
+  \strip@pt\dimexpr0.351459\dimexpr\csname#2\endcsname\relax\relax mm%
+}
+\makeatother
+
+% 修改算法中描述为中文
+\floatname{algorithm}{算法}
+\renewcommand{\algorithmicrequire}{\textbf{输入:}}
+\renewcommand{\algorithmicensure}{\textbf{输出:}}
+\renewcommand{\algorithmicfor}{循环}
+\renewcommand{\algorithmicdo}{执行}
+\renewcommand{\algorithmicend}{结束}
+\renewcommand{\algorithmicif}{条件}
+\renewcommand{\algorithmicthen}{则执行}
+
+ % 这里是导言区
+\begin{document}
+\categorynumber{000} % 分类采用《中国图书资料分类法》
+\UDC{000}            %《国际十进分类法UDC》的类号
+\secretlevel{公开}    %学位论文密级分为"公开"、"内部"、"秘密"和"机密"四种
+\studentid{21909145}   %学号要完整，前面的零不能省略。
+
+\title{大连理工大学人体感知实验室\TeX 模板}{}{The \TeX\ Template for DUT-HPC Group}{}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  title包含四个定义，分别是中文题目，中文副标题，
+%英文标题，以及英文副标题，没有副标题可以空{}不能不写
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\author{DUT-HPC}{DUT-HPC}
+\advisor{DUT-HPC}{课题组}{DUT-HPC}{Group}
+\degree{工学硕士} % 详细学位名称
+\major[12em]{计算机科学与技术}
+\defenddate{2022.4.28}
+\maketitle
+
+\begin{abstract}{人体运动；感知}
+
+这是中文摘要部分。
+
+\end{abstract}
+
+\begin{englishabstract}{Human Action; Perception}
+
+This is the English Abstract.
+	
+\end{englishabstract}
+
+\let\cleardoublepage\clearpage
+
+\tableofcontents % 中文目录
+% \tableofengcontents % 英文目录
+
+\cleardoublepage
+
+% \tableoffigurecontents % 图目录
+% \tableoftablecontents % 表目录
+
+%\listoffigures
+%\listoftables
+\stcleardp
+
+% \input{SMTable.tex} % 论文数学符号定义页
+
+\begin{Main} % 开始正文
+
+\include{chapter01}
+\include{chapter02}
+
+% 结论
+\begin{Conclusion}
+
+这是结论部分。
+
+\end{Conclusion}
+
+\end{Main} % 结束正文
+
+\begin{Reference}
+  \bibliography{bibtex.bib} 
+\end{Reference}
+
+\let\cleardoublepage\clearpage
+
+\begin{Publics}
+  \begin{enumerate}[1.]
+    \item 论文名. 作者. 期刊名, 年份, 卷号: 页码. 主办单位：Elsevier。 SCI检索期刊，SCI检索号：121212121121（本硕士学位论文第x章）
+  \end{enumerate}
+\end{Publics}
+
+\begin{Acknowledgement}
+
+  这是致谢部分。
+
+\end{Acknowledgement}
+
+\newpage
+\printindex % 索引
+\authorizationpage
+
+\end{document}
