@@ -113,7 +113,7 @@ de von on} % 加入标题中不需要大写的英文单词
 \def\CJKindent{%
     %\settowidth\CJK@twochars{\CJK@spaceChar\CJK@spaceChar}
     % \parindent\CJK@twochars
-    \setlength{\parindent}{2em}
+    \setlength{\parindent}{2.2em} % 修改于2022-5-26，首行缩进无法对齐
     }
 % my change, 英文字体使用 Times New Roman
 \setmainfont[
