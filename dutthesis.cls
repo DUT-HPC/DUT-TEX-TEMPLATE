@@ -109,12 +109,21 @@ de von on} % 加入标题中不需要大写的英文单词
 % 加粗改黑体
 \renewcommand{\textbf}[1]{{\normalfont\bfseries #1}}
 % my change
-\def\CJK@spaceChar{\hskip \f@size \p@}
+% \def\CJK@spaceChar{\hskip \f@size \p@}
+% \def\CJKindent{%
+%   % \settowidth\CJK@twochars{\CJK@spaceChar\CJK@spaceChar}
+%   % \parindent\CJK@twochars
+%   \setlength{\parindent}{0.74cm} % 修改于2022-5-26，首行缩进无法对齐
+% }
+
+\def\elegant@CJKChar@size{\hskip 12.1 \p@} % 这里直接写死为小四号字的字号了
+\newdimen\elegant@CJKChar@size@dimen
+\settowidth\elegant@CJKChar@size@dimen{\elegant@CJKChar@size\CJKglue}
 \def\CJKindent{%
-    %\settowidth\CJK@twochars{\CJK@spaceChar\CJK@spaceChar}
-    % \parindent\CJK@twochars
-    \setlength{\parindent}{2.2em} % 修改于2022-5-26，首行缩进无法对齐
-    }
+  \setlength{\parindent}{2\elegant@CJKChar@size@dimen}
+}
+
+
 % my change, 英文字体使用 Times New Roman
 \setmainfont[
 Path = ./font/,
@@ -126,6 +135,12 @@ BoldItalicFont=timesbi.ttf
 % 新建calibri字体族
 \newfontfamily\calibri[Path = ./font/]{calibri-regular.ttf}
 \newfontfamily\cambria[Path = ./font/]{cambria.ttf}
+
+% 新建华文细黑字体
+\newfontfamily\huawenxihei[Path = ./font/]{HuaWenXiHei.ttf}
+
+% 新建仿宋——gb2312
+\newfontfamily\xinfangsong[Path = ./font/]{fangsong_GB2312.ttf}
 
 % 修改中文字体族，增加黑体
 \setCJKmainfont[
@@ -286,7 +301,7 @@ BoldItalicFont=simfang.ttf
   \headrule
 }%设置其他样式，非正文样式，罗马数字脚标
 \newpagestyle{declare}{
-  \sethead[][\song\wuhao\titlename][]{}{\song\wuhao\SchoolThesis}{}
+  % \sethead[][\song\wuhao\titlename][]{}{\song\wuhao\SchoolThesis}{}
   % \setfoot[][\xiaowuhao-\thepage-][]{}{\xiaowuhao-\thepage-}{}
   \headrule
 }%设置其他样式，非正文样式，罗马数字脚标
@@ -583,14 +598,14 @@ BoldItalicFont=simfang.ttf
 
   \ifmasterdegree
     \begin{center}
-	{\xiaoyihao\song\CJKfakebold{硕~士~学~位~论~文}}
-	\vspace{38.5pt plus 10pt minus 5pt}
+	{\xiaoyihao\song\CJKfakebold{硕~~士~~学~~位~~论~~文}}
+	\vspace{49.5pt plus 10pt minus 5pt}
 
 	\linespread{1.25}
 
 	{
-	\erhao\xhei\bfseries{\@title}\\%题名 
-	\vspace{15pt}
+	{\erhao\xhei\bfseries{\@title}}\\%题名 
+	\vspace{5pt}
 	\sanhao\hei\bfseries{\titlecap{\@titleeng}}\\%english题名，首字母大写
 	\vspace{120pt}
 	\xiaosanhao\xhei\@subtitle%副题名 
@@ -797,7 +812,7 @@ BoldItalicFont=simfang.ttf
   \xiaosihao \song \linespacing{1.3}
 }{
 \par \vspace*{1.25\baselineskip}
-  {\hei \xiaosihao 关键词：} \fs \xiaosihao \@keywords
+  {\hei \xiaosihao 关键词：} \xinfangsong \xiaosihao \@keywords
 }
 
 %%%%%%%%%%
