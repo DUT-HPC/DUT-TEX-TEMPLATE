@@ -334,10 +334,15 @@ BoldItalicFont=simfang.ttf
   \headrule
 }%设置其他样式，非正文样式，罗马数字脚标
 \newpagestyle{declare}{
-  % \sethead[][\song\wuhao\titlename][]{}{\song\wuhao\SchoolThesis}{}
+  \sethead[][\song\wuhao\SchoolThesis][]{}{\song\wuhao\SchoolThesis}{}
   % \setfoot[][\xiaowuhao-\thepage-][]{}{\xiaowuhao-\thepage-}{}
   \headrule
 }%设置其他样式，非正文样式，罗马数字脚标
+\newpagestyle{declareWithoutHead}{
+%   \sethead[][\song\wuhao\titlename][]{}{\song\wuhao\SchoolThesis}{}
+  % \setfoot[][\xiaowuhao-\thepage-][]{}{\xiaowuhao-\thepage-}{}
+  \headrule
+}%设置其他样式，不含页眉，非正文样式，罗马数字脚标
 \renewpagestyle{plain}{
   \pagestyle{dutnolabelstyle}
 }%
@@ -524,7 +529,7 @@ BoldItalicFont=simfang.ttf
   \else
   \fi
   %\englishcover % 英文封面 lixun delete english cover
-  \thispagestyle{declare}
+  \thispagestyle{declareWithoutHead}
   \dutdeclare % 独创性和使用授权声明
   \frontmatter % 开始正文之前的部分
   \pagestyle{dutfrontstyle}\clearpage
