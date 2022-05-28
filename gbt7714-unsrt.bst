@@ -39,7 +39,7 @@ INTEGERS {
 
 FUNCTION {load.config}
 {
-  #1 'uppercase.name :=
+  #1 'uppercase.name := 
   #3 'max.num.authors :=
   #1 'sentence.case.title :=
   #0 'link.title :=
@@ -491,7 +491,8 @@ FUNCTION {format.names}
               name.lang lang.en =
                 { t #1 "{vv~}{ll}{~f{~}}" format.name$
                   uppercase.name
-                    { "u" change.case$ }
+                    % { "u" change.case$ }
+                    'skip$
                     'skip$
                   if$
                   t #1 "{, jj}" format.name$ *

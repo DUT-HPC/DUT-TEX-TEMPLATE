@@ -330,7 +330,7 @@ BoldItalicFont=simfang.ttf
 }%封面样式
 \newpagestyle{dutnolabelstyle}{
   \sethead[][\song\wuhao\titlename][]{}{\song\wuhao\SchoolThesis}{}
-  \setfoot[][\xiaowuhao-\thepage-][]{}{\xiaowuhao-\thepage-}{}
+  \setfoot[][\song\xiaowuhao--~~\thepage~~--][]{}{\song\xiaowuhao--~~\thepage~~--}{}
   \headrule
 }%设置其他样式，非正文样式，罗马数字脚标
 \newpagestyle{declare}{
