@@ -135,6 +135,7 @@ BoldItalicFont=timesbi.ttf
 % 新建calibri字体族
 \newfontfamily\calibri[Path = ./font/]{calibri-regular.ttf}
 \newfontfamily\cambria[Path = ./font/]{cambria.ttf}
+\newfontfamily\yingsong[Path = ./font/]{simsun.ttc}
 
 % 新建华文细黑字体
 \newfontfamily\huawenxihei[Path = ./font/]{HuaWenXiHei.ttf}
@@ -297,7 +298,7 @@ BoldItalicFont=simfang.ttf
 }%封面样式
 \newpagestyle{dutnolabelstyle}{
   \sethead[][\song\wuhao\titlename][]{}{\song\wuhao\SchoolThesis}{}
-  \setfoot[][\xiaowuhao-\thepage-][]{}{\xiaowuhao-\thepage-}{}
+  \setfoot[][\song\xiaowuhao--~~\thepage~~--][]{}{\song\xiaowuhao--~~\thepage~~--}{}
   \headrule
 }%设置其他样式，非正文样式，罗马数字脚标
 \newpagestyle{declare}{
