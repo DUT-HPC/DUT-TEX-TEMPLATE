@@ -76,12 +76,13 @@
 \RequirePackage[numbers,sort&compress]{natbib} % 修改引用参考文献格式
 \RequirePackage[2015,numbers]{gbt7714} % 生成中文参考文献,使用numbers用来压制默认上角标文献
 \RequirePackage{array} % 扩展了 array 和 tabular 环境功能
-\RequirePackage[subfigure]{ccaption}
+% \RequirePackage[subfigure]{ccaption}
 \RequirePackage{caption} % 定义图的标题格式：居中. 使用caption3.0
-\captionsetup{%
-  format=plain,%
-  labelformat=simple,%
-  singlelinecheck=on}
+\RequirePackage{bicaption}
+% \captionsetup{%
+%   format=plain,%
+%   labelformat=simple,%
+%   singlelinecheck=on}
 \RequirePackage{paralist}% 修改列表格式
 \setdefaultenum{1)}{a)}{i.}{A.}% 设置列表模式
 %\setdefaultleftmargin{4ex}{}{}{}{}{}
@@ -141,6 +142,8 @@ BoldItalicFont=timesbi.ttf
 
 % 新建仿宋——gb2312
 \newfontfamily\xinfangsong[Path = ./font/]{fangsong_GB2312.ttf}
+
+\newfontfamily\yingsong[Path = ./font/]{simsun.ttc}
 
 % 修改中文字体族，增加黑体
 \setCJKmainfont[
@@ -231,14 +234,44 @@ BoldItalicFont=simfang.ttf
 
 % 设置图表注释样式
 \DeclareCaptionFont{capFont}{\song\wuhao} % 表格名及图名用五号宋体
+\DeclareCaptionFont{cappFont}{\yingsong\wuhao}
 \DeclareCaptionLabelSeparator{twospace}{~~}
-\captionsetup{
-  labelsep=twospace,% 去掉图标签后的冒号
-  font={capFont},%
-  figurename=图,%
-  tablename=表,%
-  listfigurename={\hfill\hei \xiaosanhao 图目录\hfill},%图表目录名
-  listtablename={\hfill\hei \xiaosanhao 表目录\hfill}}
+% \captionsetup{
+%   labelsep=twospace,% 去掉图标签后的冒号
+%   textfont={capFont},%
+%   labelfont={cappFont},
+%   figurename=图,%
+%   tablename=表,%
+%   listfigurename={\hfill\hei \xiaosanhao 图目录\hfill},%图表目录名
+%   listtablename={\hfill\hei \xiaosanhao 表目录\hfill}}
+
+\captionsetup[figure][bi-first]{
+    name={图\hspace{-0.3em}},
+    textfont={cappFont},
+    labelfont={cappFont},
+    labelsep=quad,
+    singlelinecheck=on
+} % 图中文标题
+
+\captionsetup[figure][bi-second]{
+    name=Fig.,
+    font={capFont},
+    labelsep=quad
+} % 图英文
+
+\captionsetup[table][bi-first]{
+    name={表\hspace{-0.3em}},
+    textfont={cappFont},
+    labelfont={cappFont},
+    labelsep=quad,
+    singlelinecheck=on
+} % 表中文
+
+\captionsetup[table][bi-second]{
+    name=Tab.,
+    font={capFont},
+    labelsep=quad,
+} % 表英文
 
 \RequirePackage[pdfencoding=auto,CJKbookmarks=true]{hyperref}
 
