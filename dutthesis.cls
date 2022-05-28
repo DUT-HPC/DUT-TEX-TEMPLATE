@@ -1135,7 +1135,7 @@ BoldItalicFont=simfang.ttf
   \stcleardp
   \phantomsection
   \addcontentsline{toc}{chapter}{结论}
-  \chapter*{\hfill 结论 \hfill}
+  \chapter*{\hfill 结\quad\quad 论 \hfill}
   \addcontentsline{toe}{chapter}{conclusion}
   \song \xiaosihao
 }{\par}
