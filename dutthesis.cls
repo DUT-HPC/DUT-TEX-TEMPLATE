@@ -368,7 +368,7 @@ BoldItalicFont=simfang.ttf
 \titlespacing{\subchapter}{0pt}{0\baselineskip}{1\baselineskip} % 标题间距
 \titlespacing{\section}{0pt}{0.2\baselineskip}{0.4\baselineskip} % 标题间距
 %\titlespacing{\subsection}{0pt}{3ex plus .05ex minus .01ex}{2ex plus .04ex}
-\titlespacing{\subsection}{0pt}{0.5\baselineskip}{0.3\baselineskip} % 标题间距
+\titlespacing{\subsection}{0pt}{0.3\baselineskip}{0.3\baselineskip} % 标题间距
 %\titlespacing{\subsubsection}{0pt}{1.5ex plus .05ex minus .01ex}{1ex plus .01ex}
 \titlespacing{\subsubsection}{0pt}{0.2\baselineskip}{0.3\baselineskip} % 标题间距
 \titlespacing{\paragraph}{0pt}{0pt}{0pt} % 标题间距
