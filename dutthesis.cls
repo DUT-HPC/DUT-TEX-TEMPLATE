@@ -298,7 +298,9 @@ BoldItalicFont=simfang.ttf
 %%%%%%%%%%
 %\RequirePackage[body={16.0cm, 22.0cm},headsep=1.3cm,top=4cm,footskip=1.25cm,bottom=4.0cm,left=2.5cm,right=2.5cm]{geometry}
 %\RequirePackage[top=3.5cm,bottom=2.5cm,includefoot,footskip=1cm,headsep=0.25cm,left=2.5cm,right=2.5cm]{geometry}
-\RequirePackage[total={21cm,29.7cm},vmargin={0.76cm,3.0cm},includehead,headheight=2.05cm,headsep=0.47cm,includefoot,left=2.45cm,right=2.45cm,footskip=1.8cm,bottom=2.15cm]{geometry} % 2022-5-29修改了边距
+% \RequirePackage[total={21cm,29.7cm},vmargin={0.76cm,3.0cm},includehead,headheight=2.05cm,headsep=0.47cm,includefoot,left=2.45cm,right=2.45cm,footskip=1.8cm,bottom=2.15cm]{geometry} % 2022-5-29修改了边距
+
+\RequirePackage[total={21cm,29.7cm},includehead,includefoot,top=1cm,headheight=1.75cm,headsep=1.2cm,left=2.45cm,right=2.45cm,footskip=1.9cm,bottom=2.1cm]{geometry} % 2022-5-29修改了边距
 
 \renewcommand\frontmatter{%
   \ifstoneside\clearpage\else\cleardoublepage\fi
@@ -363,7 +365,7 @@ BoldItalicFont=simfang.ttf
 
 \setlength{\parskip}{0pt}% 段距
 \newcommand{\mainlineskip}{1.25}            % 主行距1.25
-\titlespacing{\chapter}{0pt}{0\baselineskip}{0.8\baselineskip} % 标题间距
+\titlespacing{\chapter}{0pt}{-0.1\baselineskip}{0.8\baselineskip} % 标题间距
 \titlespacing{\subchapter}{0pt}{0\baselineskip}{1\baselineskip} % 标题间距
 \titlespacing{\section}{0pt}{0.2\baselineskip}{0.4\baselineskip} % 标题间距
 %\titlespacing{\subsection}{0pt}{3ex plus .05ex minus .01ex}{2ex plus .04ex}
@@ -814,7 +816,7 @@ BoldItalicFont=simfang.ttf
   \stcleardp
   \phantomsection
   \ifmasterdegree
-  \vspace*{1pt}
+  % \vspace*{1pt}
   \addcontentsline{toc}{chapter}{\@abstracttitletoc} %李逊修改，目录不需要摘要
   \fi
 
@@ -862,7 +864,7 @@ BoldItalicFont=simfang.ttf
   \stcleardp
   \phantomsection
   \ifmasterdegree
-  \vspace*{0.5pt}
+  % \vspace*{0.5pt}
   \addcontentsline{toc}{chapter}{Abstract}
   
   \begin{center}
@@ -1142,7 +1144,7 @@ BoldItalicFont=simfang.ttf
 {%
   \stcleardp
   \phantomsection
-  \vspace*{1pt}
+  % \vspace*{1pt}
   \addcontentsline{toc}{chapter}{\@publicstitletoc}
   \subchapter*{#1}
   \addcontentsline{toe}{chapter}{Achievements}
