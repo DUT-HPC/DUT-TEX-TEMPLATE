@@ -316,6 +316,7 @@ BoldItalicFont=simfang.ttf
 %%%%%%%%%%%%
 %  设置页面格式  %
 %%%%%%%%%%%%
+\renewcommand\headrule{\setheadrule{.7\p@}}
 \newpagestyle{dutstyle}{
   \sethead[][{\song\wuhao\titlename}][]
           {}{{\song\wuhao\SchoolThesis}}{}
