@@ -55,6 +55,11 @@ commentstyle=\color{black!50}}
 \renewcommand{\algorithmicif}{条件}
 \renewcommand{\algorithmicthen}{则执行}
 
+% 取消子图的自动编号：需要自行在标题中打出编号
+\makeatletter
+\renewcommand{\@thesubfigure}{\hskip\subfiglabelskip}
+\makeatother
+
  % 这里是导言区
 \begin{document}
 \categorynumber{000} % 分类采用《中国图书资料分类法》
