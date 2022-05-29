@@ -140,6 +140,7 @@ BoldItalicFont=timesbi.ttf
 % 新建华文细黑字体
 \newfontfamily\huawenxihei[Path = ./font/]{HuaWenXiHei.ttf}
 \newfontfamily\yingsong[Path = ./font/, AutoFakeBold=4]{simsun.ttc}
+\newfontfamily\yinghei[Path = ./font/]{simhei.ttf}
 
 % 修改中文字体族，增加黑体
 \setCJKmainfont[
