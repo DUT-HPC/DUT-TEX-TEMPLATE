@@ -140,9 +140,6 @@ BoldItalicFont=timesbi.ttf
 % 新建华文细黑字体
 \newfontfamily\huawenxihei[Path = ./font/]{HuaWenXiHei.ttf}
 
-% 新建仿宋——gb2312
-\newfontfamily\xinfangsong[Path = ./font/]{fangsong_GB2312.ttf}
-
 \newfontfamily\yingsong[Path = ./font/]{simsun.ttc}
 
 % 修改中文字体族，增加黑体
@@ -160,7 +157,7 @@ BoldItalicFont=simfang.ttf
 \newcommand{\xhei}{\CJKfamily{FZXiHei}}
 \setCJKfamilyfont{zhkai}[Path = ./font/]{simkai.ttf}
 \newcommand{\kai}{\CJKfamily{zhkai}}
-\setCJKfamilyfont{zhfs}[Path = ./font/]{simfang.ttf}
+\setCJKfamilyfont{zhfs}[Path = ./font/]{fangsong_GB2312.ttf}
 \newcommand{\fs}{\CJKfamily{zhfs}}
 \setCJKfamilyfont{FZXingKai}[Path = ./font/]{FZXKK.TTF}
 \newcommand{\xkai}{\CJKfamily{FZXingKai}}
@@ -850,7 +847,7 @@ BoldItalicFont=simfang.ttf
   \xiaosihao \song \linespacing{1.3}
 }{
 \par \vspace*{1.25\baselineskip}
-  {\hei \xiaosihao 关键词：} \xinfangsong \xiaosihao \@keywords
+  {\hei \xiaosihao 关键词：} \fs \xiaosihao \@keywords
 }
 
 %%%%%%%%%%
