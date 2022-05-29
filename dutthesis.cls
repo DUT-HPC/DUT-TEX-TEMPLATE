@@ -365,7 +365,7 @@ BoldItalicFont=simfang.ttf
 
 \setlength{\parskip}{0pt}% 段距
 \newcommand{\mainlineskip}{1.25}            % 主行距1.25
-\titlespacing{\chapter}{0pt}{-0.1\baselineskip}{0.8\baselineskip} % 标题间距
+\titlespacing{\chapter}{0pt}{-1.2\baselineskip}{0.8\baselineskip} % 标题间距
 \titlespacing{\subchapter}{0pt}{0\baselineskip}{1\baselineskip} % 标题间距
 \titlespacing{\section}{0pt}{0.2\baselineskip}{0.4\baselineskip} % 标题间距
 %\titlespacing{\subsection}{0pt}{3ex plus .05ex minus .01ex}{2ex plus .04ex}
