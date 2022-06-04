@@ -31,7 +31,7 @@ INTEGERS {
   in.booktitle
   italic.jounal
   bold.journal.volume
-  show.missing.address.publisher
+  show.missing.location.publisher
   show.url
   show.doi
   show.note
@@ -48,7 +48,7 @@ FUNCTION {load.config}
   #0 'in.booktitle :=
   #0 'italic.jounal :=
   #0 'bold.journal.volume :=
-  #1 'show.missing.address.publisher :=
+  #1 'show.missing.location.publisher :=
   #1 'show.url :=
   #1 'show.doi :=
   #0 'show.note :=
@@ -56,6 +56,7 @@ FUNCTION {load.config}
 
 ENTRY
   { address
+    location
     author
     booktitle
     date
@@ -981,13 +982,13 @@ FUNCTION {format.publisher}
   if$
 }
 
-FUNCTION {format.address.publisher}
-{ address empty$ not
-    { address
+FUNCTION {format.location.publisher}
+{ location empty$ not
+    { location
       format.publisher empty$ not
         % { bbl.colon * format.publisher * }
         { format.publisher }
-        { entry.is.electronic not show.missing.address.publisher and
+        { entry.is.electronic not show.missing.location.publisher and
             % { bbl.colon * bbl.sine.nomine * }
             { bbl.sine.nomine }
             'skip$
@@ -995,7 +996,7 @@ FUNCTION {format.address.publisher}
         }
       if$
     }
-    { entry.is.electronic not show.missing.address.publisher and
+    { entry.is.electronic not show.missing.location.publisher and
         { format.publisher empty$ not
             % { bbl.sine.loco bbl.colon * format.publisher * }
             { format.publisher }
@@ -1009,6 +1010,37 @@ FUNCTION {format.address.publisher}
         }
       if$
     }
+  if$
+}
+
+FUNCTION {format.address}
+{ address empty$ not
+  { address
+    format.publisher empty$ not
+      { bbl.colon * format.publisher * }
+      % { format.publisher }
+      { entry.is.electronic not show.missing.location.publisher and
+          % { bbl.colon * bbl.sine.nomine * }
+          { bbl.sine.nomine }
+          'skip$
+        if$
+      }
+    if$
+  }
+  { entry.is.electronic not show.missing.location.publisher and
+      { format.publisher empty$ not
+          % { bbl.sine.loco bbl.colon * format.publisher * }
+          { format.publisher }
+          { bbl.sine.loco.sine.nomine }
+        if$
+      }
+      { format.publisher empty$ not
+          { format.publisher }
+          { "" }
+        if$
+      }
+    if$
+  }
   if$
 }
 
@@ -1394,7 +1426,7 @@ FUNCTION {monograph}
   new.sentence
   format.edition output
   new.block
-  format.address.publisher output
+  format.location.publisher output
   format.year "year" output.check
   format.pages bbl.colon output.after
   format.urldate "" output.after
@@ -1422,7 +1454,8 @@ FUNCTION {incollection}
   new.block
 %   format.edition output
 %   new.block
-  format.address.publisher output
+  % format.location.publisher output
+  format.address output % 2022-6-4 zgxh 适应7714 2015
   format.year "year" output.check
   format.volume output
   format.number "" output.after
@@ -1446,7 +1479,7 @@ FUNCTION {periodical}
   new.block
   format.periodical.year.volume.number output
   new.block
-  format.address.publisher output
+  format.location.publisher output
   format.date "year" output.check
   format.urldate "" output.after
   format.url output
@@ -1507,7 +1540,7 @@ FUNCTION {electronic}
   "EB" set.entry.mark
   format.mark "" output.after
   new.block
-  format.address.publisher output
+  format.location.publisher output
   date empty$
     { format.date output }
     'skip$
