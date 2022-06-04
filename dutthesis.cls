@@ -1087,7 +1087,7 @@ BoldItalicFont=simfang.ttf
 \newenvironment{Reference}
 {%
   %\stcleardp
-  %\phantomsection
+  \phantomsection
   \addcontentsline{toc}{chapter}{\@referecetitletoc}
   %\vspace*{4pt plus 2pt minus 3pt} 
 %\ConChapter{#1}
@@ -1196,6 +1196,7 @@ BoldItalicFont=simfang.ttf
 \newcommand{\authorizationpage}{
 \pagestyle{declare}
 % \vspace{10pt}
+\phantomsection
 \addcontentsline{toc}{chapter}{\universityname 学位论文版权使用授权声明}
 \clearpage \dutauthorization}
 
